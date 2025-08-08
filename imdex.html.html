@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated Background with Music</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff3cac, #784ba0, #2b86c5, #00c6ff, #0072ff, #f7971e, #ffd200);
+    background-size: 600% 600%;
+    animation: bgAnimate 5s infinite alternate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @keyframes bgAnimate {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+
+  button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    background: #ff4081;
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  button:hover {
+    background: #e91e63;
+    transform: scale(1.1);
+  }
+
+	h1 {
+
+ position: absolute;
+      top: 34%;
+      width: 100%;
+      text-align: center;
+color:white; text-shadow: 0 0 10px black;
+      animation: glow 2s infinite alternate, colorChange 5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00de; }
+      to { text-shadow: 0 0 20px #fff, 0 0 40px #00f0ff; }
+    }
+
+    @keyframes colorChange {
+      0% { color: #ff0055; }
+      25% { color: #ff9100; }
+      50% { color: #00c3ff; }
+      75% { color: #8d00ff; }
+      100% { color: #ff00de; }
+    }
+	h2 {
+      position: absolute;
+      top: 40%;
+      width: 100%;
+      text-align: center;
+      font-size: 1.4rem;
+      font-family: "Microsoft Uighur",
+color:white; text-shadow: 0 0 10px black;
+      animation: glow 2s infinite alternate, colorChange 5s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #fff, 0 0 20px #ff00de; }
+      to { text-shadow: 0 0 20px #fff, 0 0 40px #00f0ff; }
+    }
+
+    @keyframes colorChange {
+      0% { color: #ff0055; }
+      25% { color: #ff9100; }
+      50% { color: #00c3ff; }
+      75% { color: #8d00ff; }
+      100% { color: #ff00de; }
+    }
+	h3 {
+      position: absolute;
+      top: 1.5%;
+      width: 99%;
+      text-align: top;
+      font-size: .7rem;
+      font-family: "Times New Roman", cursive, sans-serif;
+       font-style: italic;
+    }
+
+	h4{
+ position: absolute;
+      top: 75%;
+      width: 100%;
+      text-align: center;
+ color: #fff;
+  font-size: 1.4rem;
+ font-family: 'Arial', sans-serif;
+      text-shadow:
+        0 0 5px #ff0080,
+        0 0 10px #ff0080,
+        0 0 20px #ff0080,
+        0 0 40px #ff0080,
+        0 0 80px #ff0080;
+      animation: flicker 2s infinite;
+    }
+
+  
+    @keyframes flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow:
+          0 0 5px #ff0080,
+          0 0 10px #ff0080,
+          0 0 20px #ff0080,
+          0 0 40px #ff0080,
+          0 0 80px #ff0080;
+      }
+      20%, 24%, 55% {
+        opacity: 0.2;
+        text-shadow: none;
+      }
+    }
+
+
+.center-image {
+      position: absolute;
+      top: 18%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+.Mona-image {
+      position: absolute;
+      top: 18%;
+      left: 62%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+.Ritu-image {
+      position: absolute;
+      top: 18%;
+      left: 38%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image {
+      position: absolute;
+      top: 11%;
+      left: 92%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+.ani-image1 {
+      position: absolute;
+      top:35%;
+      left: 92%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+.ani-image2 {
+      position: absolute;
+      top:59%;
+      left: 92%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+.ani-image3 {
+      position: absolute;
+      top:83%;
+      left: 92%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image4 {
+      position: absolute;
+      top:83%;
+      left: 8%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image5 {
+      position: absolute;
+      top:59%;
+      left: 8%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image6 {
+      position: absolute;
+      top:35%;
+      left: 8%;
+      transform: translate(-50%, -50%);
+      width: 200px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image7 {
+      position: absolute;
+      top:14.5%;
+      left: 10.5%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+	border-radius: 15px; /* Rounded corners */
+      box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image8 {
+      position: absolute;
+      top:66.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+	border-radius: 15px; /* Rounded corners */
+      drop-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+	
+.ani-image9 {
+      position: absolute;
+      top:36.8%;
+      left: 77%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+	border-radius: 15px; /* Rounded corners */
+      drop-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image10 {
+      position: absolute;
+      top:36.8%;
+      left: 23%;
+      transform: translate(-50%, -50%);
+      width: 150px;
+	border-radius: 15px; /* Rounded corners */
+      drop-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+.ani-image11 {
+      position: absolute;
+      top:66.5%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+	border-radius: 15px; /* Rounded corners */
+      drop-shadow: 10px 10px 25px rgba(0, 0, 0, 0.5); /* Shadow */
+    }
+
+
+
+</style>
+</head>
+<body>
+  <h1>🌸 Happy Raksha Bandhan Cute Buzo & MY Choti Sis 🌸</h1>
+ <h2>💖A Bond of Fight, Love & Care Forever 💖</h2>
+<h3>This Page Created By Rohit>>>
+<br> Dedicated to Ritu...</br></h3>
+
+		<!-- Center PNG Image -->
+  <img class="center-image" src="D:\My Personal Data\New Images\IMG_20250308_193143059_HDR_PORTRAIT edited.jpg" alt="Brother & Sister">
+
+		<!-- Mona PNG Image -->
+  <img class="Mona-image" src="D:\My Personal Data\New Images\IMG_20250526_132940366_HDR_PORTRAITedited.jpg" alt="Brother & Sister">
+
+		<!-- Center PNG Image -->
+  <img class="Ritu-image" src="D:\My Personal Data\New Images\Ritu12 upscl.jpg" alt="Brother & Sister">
+		
+		<!-- Center PNG Image -->
+  <img class="ani-image" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMDljdWV5b3hteTV6cXUyN3o4M2dob2g0M25xNWttOWZyajA3bnJvYiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/jsHZ6OqkXlm9Wh05AJ/giphy.gif" alt="Brother & Sister">
+
+		<!-- Center PNG Image -->
+  <img class="ani-image1" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHQzeWNvdWw3Y3BrOXM0emV6ZnBzMWYxd3NzY2k4NWRwY3NvNzZ1eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/idelUQGkDbHAUP7zmo/giphy.gif" alt="Brother & Sister">		
+
+		<!-- Center PNG Image -->
+  <img class="ani-image2" src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZHk0eXZmc3c5MWsxbHZoanRrYW5idDgxZDF6aGg1bjNvbGd6emd3NCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/UQPWQth1q4H68hajgS/giphy.gif" alt="Brother & Sister">		
+		
+		<!-- Center PNG Image -->
+  <img class="ani-image3" src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOG8yZXU4ZXZmM2hjaW9yODRnb3RucXhkNWFoNHZ2Z3RwdDlsNmxjciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/d825lGPDjbkENaxZl1/giphy.gif" alt="Brother & Sister">	
+
+		<!-- Center PNG Image -->
+  <img class="ani-image4" src="https://media1.tenor.com/m/ns5wLg0EEE4AAAAd/digitalbharati-digitalrakhi.gif" alt="Brother & Sister">		
+
+		<!-- Center PNG Image -->
+  <img class="ani-image5" src="https://media1.tenor.com/m/PNVHHLsU-RUAAAAC/raksha-bandhan-raksha.gif" alt="Brother & Sister">
+
+		<!-- Center PNG Image -->
+  <img class="ani-image6" src="https://media1.tenor.com/m/Raiebo8vfKUAAAAC/happy-raksha-bandhan-rakhi-rakhdi.gif" alt="Brother & Sister">
+
+		<!-- Center PNG Image -->
+  <img class="ani-image7" src="D:\My Personal Data\Nature & Flowers\Black And White Valentine Collage Photo Collage 4_3 Template.jpg" alt="Brother & Sister">
+
+				<!-- Center PNG Image -->
+  <img class="ani-image8" src="D:\Logo\Untitled-1-removebg-preview.png" alt="Brother & Sister">
+
+				<!-- Center PNG Image -->
+  <img class="ani-image9" src="D:\Logo\project.png" alt="Brother & Sister">
+
+				<!-- Center PNG Image -->
+  <img class="ani-image10" src="D:\Logo\project1.png" alt="Brother & Sister">
+
+
+<h4>
+    RITU 🍂 ROHIT 🍂 MONA
+  </h4>
+			
+
+
+<audio id="bg-music" loop>
+  <source src="D:\My Personal Data\Videos\Dhaagon Se Baandhaa - Lyrical  Raksha Bandhan  Akshay Kumar Arijit Singh,Shreya G,Himesh R,Irshad.mp3" type="audio/mpeg">
+</audio>
+
+<button onclick="toggleMusic()">🎵 Play Music</button>
+
+<script>
+function toggleMusic() {
+  const music = document.getElementById("bg-music");
+  const btn = document.querySelector("button");
+  if (music.paused) {
+    music.play();
+    btn.textContent = "⏸ Pause Music";
+  } else {
+    music.pause();
+    btn.textContent = "🎵 Play Music";
+  }
+}
+
+</script>
+
+</body>
+</html>
