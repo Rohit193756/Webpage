@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Happy Independence Day 🇮🇳</title>
+  <meta name="description" content="Animated, attractive Independence Day web page with tricolor effects, fireworks, balloons, music button, and personalization." />
+  <style>
+    :root{
+      --saffron:#FF9933;
+      --white:#FFFFFF;
+      --green:#138808;
+      --navy:#000080;
+      --bg1:#0b1424;
+      --bg2:#111b33;
+      --glow: 0 0 10px rgba(255,255,255,.5), 0 0 30px rgba(255,255,255,.2);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color:#f5f7fb;
+      overflow:hidden;
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(255,153,51,.25), transparent 60%),
+                  radial-gradient(800px 500px at 80% 110%, rgba(19,136,8,.25), transparent 60%),
+                  linear-gradient(120deg, var(--bg1), var(--bg2));
+    }
+
+    /* Animated border ribbon */
+    .frame{
+      position:fixed; inset:0; pointer-events:none;
+    }
+    .frame::before{
+      content:""; position:absolute; inset:14px;
+      border-radius:24px;
+      padding:3px; background:
+      conic-gradient(from var(--ang,0deg), var(--saffron), var(--white), var(--green), var(--saffron));
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+              mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      animation: spin 12s linear infinite;
+      box-shadow: 0 0 30px rgba(255,255,255,.08) inset;
+    }
+    @keyframes spin{to{--ang:360deg}}
+
+    /* Header */
+    header{
+      position:relative; z-index:5; text-align:center; padding:24px 12px 10px;
+    }
+    .title{ 
+      font-size: clamp(28px, 5vw, 64px);
+      line-height:1.05; margin:0; font-weight:800;
+      letter-spacing:.6px; text-transform:uppercase;
+      background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
+      -webkit-background-clip: text; background-clip:text; color:transparent;
+      filter: drop-shadow(0 4px 0 rgba(0,0,0,.25));
+      animation: shimmer 5s linear infinite;
+    }
+    @keyframes shimmer{
+      0%{background-position:0% 50%}
+      100%{background-position:200% 50%}
+    }
+    .subtitle{
+      margin:6px 0 0; opacity:.9; font-size:clamp(14px, 2.5vw, 18px);
+    }
+
+    /* CTA Row */
+    .controls{
+      display:flex; gap:10px; justify-content:center; align-items:center; flex-wrap:wrap;
+      margin:14px auto 8px; padding:0 12px; z-index:6; position:relative;
+    }
+    button, input{
+      font:inherit; border:none; border-radius:999px; padding:10px 16px; outline:none;
+    }
+    button{
+      background: linear-gradient(90deg, var(--saffron), var(--white), var(--green));
+      color:#0b1424; font-weight:700; cursor:pointer; box-shadow: var(--glow);
+      transition: transform .15s ease, box-shadow .2s ease; user-select:none;
+    }
+    button:hover{ transform: translateY(-2px) }
+    input{
+      min-width:230px; background:rgba(255,255,255,.08); color:#fff;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.12);
+    }
+
+    /* Flag */
+    .flag-wrap{ position:relative; height:42vh; max-height:420px; min-height:260px; width:min(88vw, 980px); margin: 10px auto 0; }
+    .flag{
+      position:absolute; inset:0; border-radius:16px; overflow:hidden; transform-style:preserve-3d;
+      box-shadow: 0 30px 70px rgba(0,0,0,.45);
+      animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float{ 50%{ transform: translateY(-8px) } }
+    .stripe{ height:33.333%; width:100%; }
+    .saffron{ background:linear-gradient(180deg, var(--saffron), #e2811e) }
+    .white{ background:linear-gradient(180deg, #fff, #e9edf3) }
+    .green{ background:linear-gradient(180deg, #1ea30a, var(--green)) }
+
+    /* Waving effect */
+    .flag .stripe{ position:relative }
+    .flag .stripe::before{
+      content:""; position:absolute; inset:-20% -5%; background: inherit; filter: brightness(1.05);
+      transform-origin:left; animation: wave 3.6s ease-in-out infinite;
+      opacity:.35; mix-blend-mode:overlay; pointer-events:none;
+    }
+    .flag .white::after{
+      content:""; position:absolute; top:50%; left:50%; width:32%; aspect-ratio:1;
+      transform: translate(-50%,-50%);
+      background: radial-gradient(circle at 50% 50%, transparent 60%, rgba(0,0,0,.08) 62%),
+                  conic-gradient(from 0deg, var(--navy) 0 2.5%, transparent 2.5% 5%) ;
+      -webkit-mask: radial-gradient(circle at 50% 50%, #000 0 63%, transparent 64%);
+              mask: radial-gradient(circle at 50% 50%, #000 0 63%, transparent 64%);
+      border-radius:50%;
+      box-shadow:0 0 0 6px var(--navy) inset;
+      animation: chakra 12s linear infinite;
+    }
+    @keyframes wave{ 0%,100%{ transform:skewY(0) translateZ(0) } 50%{ transform:skewY(-3deg) translateZ(10px) } }
+    @keyframes chakra{ to{ transform: translate(-50%,-50%) rotate(360deg) } }
+
+    /* Balloons */
+    .balloons{ position:fixed; inset:0; pointer-events:none; z-index:2; overflow:hidden }
+    .balloons span{
+      position:absolute; bottom:-10vh; width:28px; height:36px; border-radius:14px 14px 14px 14px / 18px 18px 12px 12px;
+      background:var(--saffron); opacity:.9;
+      animation: rise var(--dur,14s) linear infinite; filter: drop-shadow(0 4px 6px rgba(0,0,0,.4));
+    }
+    .balloons span::before{ /* string */
+      content:""; position:absolute; left:50%; bottom:-26px; width:2px; height:28px; background:rgba(255,255,255,.35);
+      transform:translateX(-50%);
+    }
+    @keyframes rise{ to{ transform: translateY(-120vh) translateX(var(--drift, 0)) } }
+
+    /* Footer */
+    footer{ position:fixed; bottom:10px; width:100%; text-align:center; z-index:5; font-size:14px; opacity:.85 }
+    footer a{ color:#cfe6ff }
+
+    /* Canvas layers */
+    canvas{ position:fixed; inset:0; width:100%; height:100%; display:block }
+    #fw{ z-index:1 }
+    #glow{ z-index:0; filter: blur(20px) opacity(.9) }
+
+    /* Personal message */
+    .msg{ position:relative; z-index:5; text-align:center; margin-top:12px; font-size:clamp(16px, 2.8vw, 22px); opacity:.95 }
+    .name{ font-weight:800; letter-spacing:.5px }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .frame::before, .flag .stripe::before, .flag, .title, .balloons span, #fw, #glow{ animation: none !important }
+    }
+  </style>
+</head>
+<body>
+  <div class="frame" aria-hidden="true"></div>
+
+  <header>
+    <h1 class="title">Happy Independence Day • भारत • 15 August</h1>
+    <p class="subtitle">Celebrating freedom, unity, and the spirit of 🇮🇳</p>
+  </header>
+
+  <div class="controls" role="group" aria-label="Controls">
+    <button id="playBtn" aria-label="Play music"> INDIA</button>
+    <audio id="music" preload="auto">
+      <!-- Replace src with your own MP3 for best effect -->
+      <source src="https://music.youtube.com/watch?v=L1yeukkQTOg&si=IQIPDh1jgYmx0rym">
+    </audio>
+    <input id="nameInput" type="text" placeholder="Add your name or message…" aria-label="Your Name"/>
+    <button id="applyName">Apply</button>
+  </div>
+
+  <div class="flag-wrap" aria-label="Indian Flag Animation">
+    <div class="flag" role="img" aria-label="Indian tricolor with Ashoka Chakra">
+      <div class="stripe saffron"></div>
+      <div class="stripe white"></div>
+      <div class="stripe green"></div>
+    </div>
+  </div>
+
+  <p class="msg">Warm wishes from <span class="name" id="nameText">You & Your family</span> ✨</p>
+
+  <!-- Canvas: Fireworks + soft glow -->
+  <canvas id="fw"></canvas>
+  <canvas id="glow"></canvas>
+
+  <!-- Balloons (tricolor) -->
+  <div class="balloons" aria-hidden="true" id="balloons"></div>
+
+  <footer>
+    Created By ROHIT MONDAL ❤️ for India. Tip: click anywhere for fireworks! | Click Audio Botton For Play Music...
+  </footer>
+
+  <script>
+    // ===== Helpers =====
+    const clamp = (n, min, max) => Math.max(min, Math.min(n, max));
+
+    // ===== Personalization =====
+    const nameInput = document.getElementById('nameInput');
+    const nameText = document.getElementById('nameText');
+    document.getElementById('applyName').addEventListener('click', () => {
+      const v = nameInput.value.trim();
+      nameText.textContent = v || 'you & your family';
+    });
+
+    // ===== Music Button =====
+    const music = document.getElementById('music');
+    const playBtn = document.getElementById('playBtn');
+    let playing = false;
+    playBtn.addEventListener('click', async () => {
+      try{
+        if(!playing){ await music.play(); playBtn.textContent = '⏸ Pause Music'; playing = true; }
+        else{ music.pause(); playBtn.textContent = '▶ Play Music'; playing = false; }
+      }catch(e){ alert('Add an MP3 to the <audio> source first.'); }
+    });
+
+    // ===== Balloons =====
+    const balloonC = document.getElementById('balloons');
+    const colors = ['var(--saffron)', 'var(--white)', 'var(--green)'];
+    function spawnBalloons(){
+      for(let i=0;i<24;i++){
+        const s = document.createElement('span');
+        const left = Math.random()*100; // vw
+        const delay = Math.random()*-12; // start in the air
+        const dur = 12 + Math.random()*8;
+        const size = 22 + Math.random()*22;
+        const drift = (Math.random()*2-1)*40 + 'px';
+        s.style.left = left+'vw';
+        s.style.animationDelay = delay+'s';
+        s.style.setProperty('--dur', dur+'s');
+        s.style.setProperty('--drift', drift);
+        s.style.width = size+'px'; s.style.height = (size*1.25)+'px';
+        s.style.background = colors[i%3];
+        balloonC.appendChild(s);
+      }
+    }
+    spawnBalloons();
+
+    // ===== Fireworks =====
+    const fw = document.getElementById('fw');
+    const glow = document.getElementById('glow');
+    const ctx = fw.getContext('2d');
+    const gtx = glow.getContext('2d');
+    let W, H, dpr;
+
+    function resize(){
+      dpr = Math.min(window.devicePixelRatio||1, 2);
+      W = fw.width = glow.width = Math.floor(innerWidth * dpr);
+      H = fw.height = glow.height = Math.floor(innerHeight * dpr);
+      fw.style.width = glow.style.width = innerWidth+'px';
+      fw.style.height = glow.style.height = innerHeight+'px';
+    }
+    addEventListener('resize', resize, {passive:true});
+    resize();
+
+    class Particle{
+      constructor(x,y,color){
+        this.x=x; this.y=y; this.vx=(Math.random()*2-1)*4; this.vy=(Math.random()*2-1)*4-6;
+        this.life= 60 + Math.random()*40; this.age=0; this.color=color; this.size= 1 + Math.random()*2.2;
+        this.g=0.05; this.drag=0.985;
+      }
+      step(){
+        this.vx*=this.drag; this.vy=this.vy*this.drag + this.g;
+        this.x+=this.vx; this.y+=this.vy; this.age++;
+      }
+      get alive(){ return this.age < this.life }
+    }
+
+    const fireworks=[];
+    function boom(x,y){
+      const cols = ['#ff9933','#ffffff','#138808','#1cc88a','#ffd166','#a4b1ff'];
+      const n = 80 + Math.floor(Math.random()*40);
+      const burst=[]; for(let i=0;i<n;i++) burst.push(new Particle(x,y, cols[i%cols.length]));
+      fireworks.push(burst);
+    }
+
+    // Auto random fireworks
+    let t=0; function auto(){
+      t++; if(t%50===0){ boom(Math.random()*W, Math.random()*H*0.6 + H*0.2); }
+    }
+
+    // Draw loop
+    function draw(){
+      ctx.globalCompositeOperation='source-over';
+      ctx.fillStyle='rgba(0,0,0,0.15)'; ctx.fillRect(0,0,W,H);
+      gtx.clearRect(0,0,W,H);
+      auto();
+      for(let i=fireworks.length-1;i>=0;i--){
+        const burst = fireworks[i];
+        let aliveCount=0;
+        for(const p of burst){
+          if(!p.alive) continue; aliveCount++; p.step();
+          ctx.globalCompositeOperation='lighter';
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.size,0,Math.PI*2); ctx.fillStyle=p.color; ctx.fill();
+          // glow
+          gtx.beginPath(); gtx.arc(p.x,p.y,p.size*2.5,0,Math.PI*2); gtx.fillStyle=p.color; gtx.fill();
+        }
+        if(aliveCount===0) fireworks.splice(i,1);
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Click to create a firework
+    addEventListener('pointerdown', (e)=>{
+      const rect = fw.getBoundingClientRect();
+      const x = (e.clientX - rect.left) * dpr;
+      const y = (e.clientY - rect.top) * dpr;
+      boom(x,y);
+    }, {passive:true});
+
+    // Bonus: Keyboard spacebar to toggle music
+    addEventListener('keydown', (e)=>{
+      if(e.code==='Space'){
+        e.preventDefault();
+        playBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
